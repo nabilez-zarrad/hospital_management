@@ -15,7 +15,10 @@ class UserController extends Controller
             {
              return view("admin.dashboard");  
             }
-           
+            else if(Auth::check()&&Auth::user()->user_type=="medecin")
+            {
+             return view("medecin.dashboard");
+            }
         else{
             return redirect('/');
         }
