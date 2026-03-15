@@ -8,6 +8,7 @@ class UserController extends Controller
 {
     public function Dashboard(){
         if(Auth::check()&&Auth::user()->user_type=='user')
+          
             {
              return view("index");  
             }
@@ -15,7 +16,6 @@ class UserController extends Controller
             {
              return view("admin.dashboard");  
             }
-           
         else{
             return redirect('/');
         }

@@ -63,11 +63,24 @@
 							</li>
 							<li class="has-submenu">
 								<a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
-                                   
+                                    <ul class="submenu">
+                                
+                                    </ul>
 							</li>	
 							<li class="has-submenu">
 								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-                                
+                                    <ul class="submenu">
+                                        <li><a href="search.html">Search Doctor</a></li>
+                                        <li><a href="doctor-profile.html">Doctor Profile</a></li>
+                                        <li><a href="booking.html">Booking</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="booking-success.html">Booking Success</a></li>
+                                        <li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+                                        <li><a href="favourites.html">Favourites</a></li>
+                                        <li><a href="chat.html">Chat</a></li>
+                                        <li><a href="profile-settings.html">Profile Settings</a></li>
+                                        <li><a href="change-password.html">Change Password</a></li>
+                                    </ul>
 							</li>	
 							<li class="has-submenu">
 								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
