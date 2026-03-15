@@ -9,13 +9,12 @@ use App\Models\Section;
 class AdminController extends Controller
 {
 
-  public function createDoctor()
-{
-    $sections = Section::all();
-    $medecins = Medecin::all();
+    public function createDoctor()
+    {
+        $sections = Section::all();
 
-    return view('admin.add_doctor', compact('sections','medecins'));
-}
+        return view('admin.add_doctor', compact('sections'));
+    }
 
     public function storeDoctor(Request $request)
     {

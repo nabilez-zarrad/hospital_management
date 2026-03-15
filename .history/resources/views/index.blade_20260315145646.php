@@ -2,8 +2,8 @@
 
 @section('content')
 
+@include('home.banner')
 
-@include('banner')
 @include('Clinic_and_Specialities')
 
 @include('Popular_Section')

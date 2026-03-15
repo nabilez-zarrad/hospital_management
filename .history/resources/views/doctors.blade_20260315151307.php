@@ -1,12 +1,19 @@
+@extends('maindesign')
+
+@section('content')
+
 <section class="section section-doctor">
 
-<div class="container-fluid">
+<div class="container">
 
 <div class="section-header text-center">
-<h2>Book Our Doctor</h2>
+
+<h2>Our Doctors</h2>
+
 <p class="sub-title">
-Find the best doctors and make an appointment
+Find the best doctors and book an appointment
 </p>
+
 </div>
 
 <div class="row">
@@ -20,7 +27,8 @@ Find the best doctors and make an appointment
 <div class="doc-img">
 
 <img class="img-fluid"
-src="{{ asset('front-end/assets/img/doctors/doctor-thumb-01.jpg') }}">
+src="{{ asset('front-end/assets/img/doctors/doctor-thumb-01.jpg') }}"
+alt="Doctor Image">
 
 </div>
 
@@ -71,3 +79,5 @@ Book Now
 </div>
 
 </section>
+
+@endsection

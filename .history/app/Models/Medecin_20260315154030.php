@@ -12,20 +12,7 @@ class Medecin extends Authenticatable
 {
     use HasFactory;
 
-protected $fillable = [
 
-'name',
-'email',
-'password',
-'phone',
-'section_id',
-'address',
-'experience',
-'description',
-'image',
-'status'
-
-];
 
     public function image()
     {

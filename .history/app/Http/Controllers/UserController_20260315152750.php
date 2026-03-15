@@ -73,28 +73,5 @@ public function myAppointments()
 
     return view('my_appointments', compact('appointments'));
 }
-public function cancelAppointment($id)
-{
-    $appointment = Rendezvous::findOrFail($id);
 
-    if($appointment->patient_id == Auth::id())
-    {
-        $appointment->delete();
-    }
-
-    return back()->with('success','Appointment cancelled');
-}
-public function searchDoctors(Request $request)
-{
-    $query = $request->search;
-
-    $medecins = Medecin::with('section')
-        ->where('name','LIKE',"%$query%")
-        ->orWhereHas('section', function($q) use ($query){
-            $q->where('name','LIKE',"%$query%");
-        })
-        ->get();
-
-    return view('doctors', compact('medecins'));
-}
 }

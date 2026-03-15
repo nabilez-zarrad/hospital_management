@@ -84,17 +84,4 @@ public function cancelAppointment($id)
 
     return back()->with('success','Appointment cancelled');
 }
-public function searchDoctors(Request $request)
-{
-    $query = $request->search;
-
-    $medecins = Medecin::with('section')
-        ->where('name','LIKE',"%$query%")
-        ->orWhereHas('section', function($q) use ($query){
-            $q->where('name','LIKE',"%$query%");
-        })
-        ->get();
-
-    return view('doctors', compact('medecins'));
-}
 }

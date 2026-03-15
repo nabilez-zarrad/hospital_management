@@ -28,5 +28,3 @@ Route::post('/book-appointment', [UserController::class,'bookAppointment'])->nam
 Route::get('/my-appointments', [UserController::class,'myAppointments'])->name('my.appointments');
 Route::delete('/appointment/{id}', [UserController::class,'cancelAppointment'])->name('cancel.appointment');
 Route::get('/search-doctors', [UserController::class,'searchDoctors'])->name('search.doctors');
-Route::get('/add-doctor', [AdminController::class,'createDoctor']);
-Route::post('/add-doctor', [AdminController::class,'storeDoctor'])->name('store.doctor');
