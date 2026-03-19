@@ -1,68 +1,73 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Medecin;
+
+
 use Illuminate\Http\Request;
-use App\Models\Rendezvous;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Doctor;
+use App\Models\Appointment;
+
 class DoctorController extends Controller
 {
+    public function dashboard()
+    {
+        return view('doctor.dashboard');
+    }
 
-public function appointments()
+   public function appointments()
 {
-    $medecin_id = Auth::id();
-    $appointments = Rendezvous::with('patient','section')->where('medecin_id',$medecin_id)->latest()->get();
-    return view('medecin.appointments',compact('appointments'));
+    $doctor = Doctor::where('user_id', Auth::id())->first();
+
+    if (!$doctor) {
+        return redirect()->back()->with('error', 'Doctor not found');
+    }
+
+    $appointments = Appointment::where('doctor_id', $doctor->id)->get();
+
+    return view('doctor.appointments', compact('appointments'));
 }
 
-public function doctor_profile_settings()
-{
+    public function profile_settings()
+    {
+        $doctor = Doctor::where('user_id', Auth::id())->first();
 
-    $doctor = Medecin::where('email', Auth::user()->email)->first();
-    return view('medecin.doctor_profile_settings', compact('doctor'));
+        return view('doctor.profile_settings', compact('doctor'));
+    }
 
-}
-public function my_patients()
-{
- return view('medecin.my_patients');
-}
-public function schedule_timings()
-{
- return view('medecin.schedule_timings' );
-}
+    public function my_patients()
+    {
+        return view('doctor.my_patients');
+    }
 
+    public function schedule_timings()
+    {
+        return view('doctor.schedule_timings');
+    }
 
+    public function acceptAppointment($id)
+    {
+        $doctor = Doctor::where('user_id', Auth::id())->first();
 
+        $appointment = Appointment::where('doctor_id', $doctor->id)
+            ->findOrFail($id);
 
+        $appointment->status = 'approved';
+        $appointment->save();
 
+        return back()->with('success', 'Appointment approved');
+    }
 
+    public function cancelAppointmentDoctor($id)
+    {
+        $doctor = Doctor::where('user_id', Auth::id())->first();
 
-public function acceptAppointment($id)
-{
+        $appointment = Appointment::where('doctor_id', $doctor->id)
+            ->findOrFail($id);
 
-$appointment = Rendezvous::where('medecin_id',Auth::id())
-->findOrFail($id);
+        $appointment->status = 'cancelled';
+        $appointment->save();
 
-$appointment->statut = 'confirme';
-
-$appointment->save();
-
-return back()->with('success','Appointment confirmed');
-
-}
-
-public function cancelAppointmentDoctor($id)
-{
-
-$appointment = Rendezvous::where('medecin_id',Auth::id())
-->findOrFail($id);
-
-$appointment->statut = 'annule';
-
-$appointment->save();
-
-return back()->with('success','Appointment cancelled');
-
-}
-
+        return back()->with('success', 'Appointment cancelled');
+    }
 }

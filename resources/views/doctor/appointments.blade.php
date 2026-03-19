@@ -33,7 +33,7 @@
 		<div class="main-wrapper">
 		
 			<!-- Header -->
-			@include('medecin.header')
+			@include('doctor.header')
 			<!-- /Header -->
 			
 			<!-- Breadcrumb -->
@@ -61,7 +61,7 @@
 
 					<div class="row">
 						
-						@include('medecin.sidbar')
+						@include('doctor.sidbar')
 						<div class="col-md-7 col-lg-8 col-xl-9">
 							<div class="appointments">
 							

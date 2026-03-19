@@ -9,6 +9,10 @@ use App\Models\Appointment;
 
 class AdminController extends Controller
 {
+    public function dashboard()
+{
+    return view('admin.dashboard');
+}
 
   public function createDoctor()
 {

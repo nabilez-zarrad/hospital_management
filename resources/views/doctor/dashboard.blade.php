@@ -8,17 +8,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<!-- Favicons -->
-		<link href="front-end/assets/img/favicon.png" rel="icon">
+		<link href={{ asset('front-end/assets/img/favicon.png') }}  rel="icon">
 		
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="front-end/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href={{ asset('front-end/assets/css/bootstrap.min.css') }} >
 		
 		<!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="front-end/assets/plugins/fontawesome/css/fontawesome.min.css">
-		<link rel="stylesheet" href="front-end/assets/plugins/fontawesome/css/all.min.css">
+		<link rel="stylesheet" href={{ asset('front-end/assets/plugins/fontawesome/css/fontawesome.min.css') }} >
+		<link rel="stylesheet" href={{ asset('front-end/assets/plugins/fontawesome/css/all.min.css') }} >
 		
 		<!-- Main CSS -->
-		<link rel="stylesheet" href="front-end/assets/css/style.css">
+		<link rel="stylesheet" href={{ asset('front-end/assets/css/style.css') }} >
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -33,7 +33,7 @@
 		<div class="main-wrapper">
 		
 			<!-- Header -->
-			@include('medecin.header')
+			@include('doctor.header')
 			<!-- /Header -->
 			
 			<!-- Breadcrumb -->
@@ -60,7 +60,7 @@
 
 					<div class="row">
 						{{-- sidebar --}}
-						@include('medecin.sidbar')
+						@include('doctor.sidbar')
 						{{-- /sidebar --}}
 
 						<div class="col-md-7 col-lg-8 col-xl-9">
@@ -74,7 +74,7 @@
 													<div class="dash-widget dct-border-rht">
 														<div class="circle-bar circle-bar1">
 															<div class="circle-graph1" data-percent="75">
-																<img src="front-end/assets/img/icon-01.png" class="img-fluid" alt="patient">
+																<img src={{ asset('front-end/assets/img/icon-01.png') }}  class="img-fluid" alt="patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">
@@ -89,7 +89,7 @@
 													<div class="dash-widget dct-border-rht">
 														<div class="circle-bar circle-bar2">
 															<div class="circle-graph2" data-percent="65">
-																<img src="front-end/assets/img/icon-02.png" class="img-fluid" alt="Patient">
+																<img src={{ asset('front-end/assets/img/icon-02.png') }}  class="img-fluid" alt="Patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">
@@ -104,7 +104,7 @@
 													<div class="dash-widget">
 														<div class="circle-bar circle-bar3">
 															<div class="circle-graph3" data-percent="50">
-																<img src="front-end/assets/img/icon-03.png" class="img-fluid" alt="Patient">
+																<img src={{ asset('front-end/assets/img/icon-03.png') }}  class="img-fluid" alt="Patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">
@@ -158,7 +158,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Richard Wilson <span>#PT0016</span></a>
 																			</h2>
 																		</td>
@@ -184,7 +184,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient1.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient1.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Charlene Reed <span>#PT0001</span></a>
 																			</h2>
 																		</td>
@@ -210,7 +210,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient2.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient2.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Travis Trimble  <span>#PT0002</span></a>
 																			</h2>
 																		</td>
@@ -236,7 +236,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient3.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient3.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Carl Kelly <span>#PT0003</span></a>
 																			</h2>
 																		</td>
@@ -262,7 +262,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient4.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient4.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Michelle Fairfax <span>#PT0004</span></a>
 																			</h2>
 																		</td>
@@ -288,7 +288,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient5.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient5.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Gina Moore <span>#PT0005</span></a>
 																			</h2>
 																		</td>
@@ -339,7 +339,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient6.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Elsie Gilley <span>#PT0006</span></a>
 																			</h2>
 																		</td>
@@ -365,7 +365,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient7.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient7.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Joan Gardner <span>#PT0006</span></a>
 																			</h2>
 																		</td>
@@ -391,7 +391,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient8.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient8.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Daniel Griffing <span>#PT0007</span></a>
 																			</h2>
 																		</td>
@@ -417,7 +417,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient9.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient9.jpg') }} alt="User Image"></a>
 																				<a href="patient-profile.html">Walter Roberson <span>#PT0008</span></a>
 																			</h2>
 																		</td>
@@ -443,7 +443,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient10.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient10.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Robert Rhodes <span>#PT0010</span></a>
 																			</h2>
 																		</td>
@@ -469,7 +469,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="front-end/assets/img/patients/patient11.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src={{ asset('front-end/assets/img/patients/patient11.jpg') }}  alt="User Image"></a>
 																				<a href="patient-profile.html">Harry Williams <span>#PT0011</span></a>
 																			</h2>
 																		</td>
@@ -519,21 +519,21 @@
 		<!-- /Main Wrapper -->
 	  
 		<!-- jQuery -->
-		<script src="front-end/assets/js/jquery.min.js"></script>
+		<script src={{ asset('front-end/assets/js/jquery.min.js') }} ></script>
 		
 		<!-- Bootstrap Core JS -->
-		<script src="front-end/assets/js/popper.min.js"></script>
-		<script src="front-end/assets/js/bootstrap.min.js"></script>
+		<script src={{ asset('front-end/assets/js/popper.min.js') }} ></script>
+		<script src={{ asset('front-end/assets/js/bootstrap.min.js') }} ></script>
 		
 		<!-- Sticky Sidebar JS -->
-        <script src="front-end/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-        <script src="front-end/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+        <script src={{ asset('front-end/assets/plugins/theia-sticky-sidebar/ResizeSensor.js') }} ></script>
+        <script src={{ asset('front-end/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js') }} ></script>
 		
 		<!-- Circle Progress JS -->
-		<script src="front-end/assets/js/circle-progress.min.js"></script>
+		<script src={{ asset('front-end/assets/js/circle-progress.min.js') }} ></script>
 		
 		<!-- Custom JS -->
-		<script src="front-end/assets/js/script.js"></script>
+		<script src={{ asset('front-end/assets/js/script.js') }}></script>
 		
 	</body>
 

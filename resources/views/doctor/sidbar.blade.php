@@ -19,18 +19,24 @@
 								<div class="dashboard-widget">
 									<nav class="dashboard-menu">
 										<ul>
-											<li class="active">
-												<a href="doctor-dashboard.html">
+                                            <li>
+												<a href="{{ route('doctor.dashboard') }}">
 													<i class="fas fa-columns"></i>
 													<span>Dashboard</span>
 												</a>
 											</li>
+
+
 											<li>
 												<a href="{{ route('doctor.appointments') }}">
 													<i class="fas fa-calendar-check"></i>
 													<span>Appointments</span>
 												</a>
 											</li>
+
+
+
+											
 											<li>
 												<a href="{{ route('doctor.my_patients') }}">
 													<i class="fas fa-user-injured"></i>
@@ -46,7 +52,7 @@
 							
 		
 											<li>
-												<a href="{{ route('doctor.doctor_profile_settings') }}">
+												<a href="{{ route('doctor.profile_settings') }}">
 													<i class="fas fa-user-cog"></i>
 													<span>Profile Settings</span>
 												</a>
@@ -69,11 +75,6 @@
 												</form>     
 											</li>
 
-
-
-											
-												
-											
 
 
 

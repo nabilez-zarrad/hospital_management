@@ -2,18 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Medecin;
 
 class Section extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name'];
 
-    protected $fillable = ['name', 'description'];
-
-    public function medecins()
+    public function doctors()
     {
-        return $this->hasMany(Medecin::class);
+        return $this->hasMany(Doctor::class);
     }
 }

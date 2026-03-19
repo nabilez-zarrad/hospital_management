@@ -12,6 +12,7 @@ class UserController extends Controller
 {
     public function Dashboard()
     {
+        
         // If you still have /dashboard route pointing here, keep it working without sections.
         if (!Auth::check()) {
             return redirect('/');
@@ -26,10 +27,19 @@ class UserController extends Controller
         if ($user->role === 'doctor') {
             return redirect()->route('doctor.dashboard');
         }
+         if ($user->role === 'patient') {
+            return redirect()->route('patient.dashboard');
+        }
 
         // patient
         return redirect('/');
     }
+public function patientDashboard()
+{
+    return view('patient.dashboard');
+}
+
+
 
     public function Index()
     {

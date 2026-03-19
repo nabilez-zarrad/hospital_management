@@ -12,6 +12,25 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+
+// Admin Dashboard
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
+        ->name('admin.dashboard');
+});
+
+// Doctor Dashboard
+Route::middleware('auth')->group(function () {
+    Route::get('/doctor/dashboard', [DoctorController::class, 'dashboard'])
+        ->name('doctor.dashboard');
+});
+
+// Patient Dashboard (اختياري)
+Route::middleware('auth')->group(function () {
+    Route::get('/patient/dashboard', [UserController::class, 'patientDashboard'])
+        ->name('patient.dashboard');
+});
+
 // Public pages
 Route::get('/', [UserController::class, 'Index'])->name('index');
 
@@ -34,7 +53,7 @@ Route::middleware('auth')->group(function () {
 
     // Doctor side: appointments management
     Route::get('/doctor/appointments', [DoctorController::class, 'appointments'])->name('doctor.appointments');
-    Route::get('/doctor/doctor_profile_settings', [DoctorController::class, 'doctor_profile_settings'])->name('doctor.doctor_profile_settings');
+    Route::get('/doctor/profile_settings', [DoctorController::class, 'profile_settings'])->name('doctor.profile_settings');
     Route::get('/doctor/my_patients', [DoctorController::class, 'my_patients'])->name('doctor.my_patients');
     Route::get('/doctor/schedule_timings', [DoctorController::class, 'schedule_timings'])->name('doctor.schedule_timings');
 

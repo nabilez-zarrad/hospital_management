@@ -11,8 +11,7 @@ Find the best doctors and make an appointment
 
 <div class="row">
 
-@foreach($medecins as $medecin)
-
+@foreach($doctors as $doctor)
 <div class="col-md-4 col-lg-3 col-sm-6">
 
 <div class="profile-widget">
@@ -28,13 +27,13 @@ src="{{ asset('front-end/assets/img/doctors/doctor-thumb-01.jpg') }}">
 
 <h3 class="title">
 
-{{ $medecin->name }}
+{{ $doctor->first_name }} {{ $doctor->last_name }}
 
 </h3>
 
 <p class="speciality">
 
-{{ $medecin->section->name }}
+{{ optional($doctor->section)->name ?? 'General' }}
 
 </p>
 

@@ -8,21 +8,21 @@
         <title>Doccure - Dashboard</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="admin_end/assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href={{ asset('admin_end/assets/img/favicon.png') }}>
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="admin_end/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href={{ asset('admin_end/assets/css/bootstrap.min.css') }}>
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="admin_end/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href={{ asset('admin_end/assets/css/font-awesome.min.css') }}>
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="admin_end/assets/css/feathericon.min.css">
+        <link rel="stylesheet" href={{ asset('admin_end/assets/css/feathericon.min.css') }}>
 		
-		<link rel="stylesheet" href="admin_end/assets/plugins/morris/morris.css">
+		<link rel="stylesheet" href={{ asset('admin_end/assets/plugins/morris/morris.css') }}"">
 		
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="admin_end/assets/css/style.css">
+        <link rel="stylesheet" href={{ asset('admin_end/assets/css/style.css') }} >
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -40,10 +40,10 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="index.html" class="logo">
-						<img src="admin_end/assets/img/logo.png" alt="Logo">
+						<img src={{ asset('admin_end/assets/img/logo.png') }}  alt="Logo">
 					</a>
 					<a href="index.html" class="logo logo-small">
-						<img src="admin_end/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+						<img src={{ asset('admin_end/assets/img/logo-small.png') }}  alt="Logo" width="30" height="30">
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -84,7 +84,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin_end/assets/img/doctors/doctor-thumb-01.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src={{ asset('admin_end/assets/img/doctors/doctor-thumb-01.jpg') }} >
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
@@ -97,7 +97,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin_end/assets/img/patients/patient1.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src={{ asset('admin_end/assets/img/patients/patient1.jpg') }} >
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
@@ -110,7 +110,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin_end/assets/img/patients/patient2.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src={{ asset('admin_end/assets/img/patients/patient2.jpg') }} >
 												</span>
 												<div class="media-body">
 												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
@@ -123,7 +123,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin_end/assets/img/patients/patient3.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src={{ asset('admin_end/assets/img/patients/patient3.jpg') }} >
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
@@ -144,12 +144,12 @@
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle" src="admin_end/assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+							<span class="user-img"><img class="rounded-circle" src={{ asset('admin_end/assets/img/profiles/avatar-01.jpg') }}  width="31" alt="Ryan Taylor"></span>
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
 								<div class="avatar avatar-sm">
-									<img src="admin_end/assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+									<img src={{ asset('admin_end/assets/img/profiles/avatar-01.jpg') }}  alt="User Image" class="avatar-img rounded-circle">
 								</div>
 								<div class="user-text">
 									<h6>Ryan Taylor</h6>
@@ -311,21 +311,21 @@
 		<!-- /Main Wrapper -->
 		
 		<!-- jQuery -->
-        <script src="admin_end/assets/js/jquery-3.2.1.min.js"></script>
+        <script src={{ asset('admin_end/assets/js/jquery-3.2.1.min.js') }} ></script>
 		
 		<!-- Bootstrap Core JS -->
-        <script src="admin_end/assets/js/popper.min.js"></script>
-        <script src="admin_end/assets/js/bootstrap.min.js"></script>
+        <script src={{ asset('admin_end/assets/js/popper.min.js') }} ></script>
+        <script src={{ asset('admin_end/assets/js/bootstrap.min.js') }} ></script>
 		
 		<!-- Slimscroll JS -->
-        <script src="admin_end/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src={{ asset('admin_end/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}  ></script>
 		
-		<script src="admin_end/assets/plugins/raphael/raphael.min.js"></script>    
-		<script src="admin_end/assets/plugins/morris/morris.min.js"></script>  
-		<script src="admin_end/assets/js/chart.morris.js"></script>
+		<script src={{ asset('admin_end/assets/plugins/raphael/raphael.min.js') }} ></script>    
+		<script src={{ asset('admin_end/assets/plugins/morris/morris.min.js') }} ></script>  
+		<script src={{ asset('admin_end/assets/js/chart.morris.js') }} ></script>
 		
 		<!-- Custom JS -->
-		<script  src="admin_end/assets/js/script.js"></script>
+		<script  src={{ asset('admin_end/assets/js/script.js') }} ></script>
 		
     </body>
 
