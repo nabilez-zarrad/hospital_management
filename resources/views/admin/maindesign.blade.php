@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
-<head>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Doccure - Dashboard</title>
@@ -19,15 +17,12 @@
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href={{ asset('admin_end/assets/css/feathericon.min.css') }}>
 		
-		<link rel="stylesheet" href={{ asset('admin_end/assets/plugins/morris/morris.css') }}"">
+		<link rel="stylesheet" href="{{ asset('admin_end/assets/plugins/morris/morris.css') }}">
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href={{ asset('admin_end/assets/css/style.css') }} >
 		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		
     </head>
     <body>
 	
@@ -39,10 +34,10 @@
 			
 				<!-- Logo -->
                 <div class="header-left">
-                    <a href="index.html" class="logo">
+                    <a href="{{ route('admin.dashboard') }}" class="logo">
 						<img src={{ asset('admin_end/assets/img/logo.png') }}  alt="Logo">
 					</a>
-					<a href="index.html" class="logo logo-small">
+					<a href="{{ route('admin.dashboard') }}" class="logo logo-small">
 						<img src={{ asset('admin_end/assets/img/logo-small.png') }}  alt="Logo" width="30" height="30">
 					</a>
                 </div>
@@ -156,8 +151,8 @@
 									<p class="text-muted mb-0">Administrator</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.html">My Profile</a>
-							<a class="dropdown-item" href="settings.html">Settings</a>
+							<a class="dropdown-item" href="{{ route('profile.edit') }}">My Profile</a>
+							<a class="dropdown-item" href="{{ route('profile.edit') }}">Settings</a>
 
                             
                             
@@ -166,12 +161,9 @@
                             <!--logout end administation-->
                               <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-
-                                    <x-dropdown-link :href="route('logout')"
-                                            onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
+                                    <button type="submit" class="dropdown-item border-0 bg-transparent w-100 text-left">
                                         {{ __('Log Out') }}
-                                    </x-dropdown-link>
+                                    </button>
                                </form>
 							
                         
@@ -193,109 +185,29 @@
                 <div class="sidebar-inner slimscroll">
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
-							<li class="menu-title"> 
+							<li class="menu-title">
 								<span>Main</span>
 							</li>
-							<li class="active"> 
-								<a href="index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+							<li class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+								<a href="{{ route('admin.dashboard') }}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
-							<li> 
-								<a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+							<li class="{{ request()->routeIs('admin.appointments.*') ? 'active' : '' }}">
+								<a href="{{ route('admin.appointments.index') }}"><i class="fe fe-layout"></i> <span>Appointments</span></a>
 							</li>
-							<li> 
-								<a href="specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
+							<li class="{{ request()->routeIs('admin.doctors.*') ? 'active' : '' }}">
+								<a href="{{ route('admin.doctors.index') }}"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
-							<li> 
-								<a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+							<li class="{{ request()->routeIs('admin.patients.*') ? 'active' : '' }}">
+								<a href="{{ route('admin.patients.index') }}"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
-							<li> 
-								<a href="patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
+							<li class="menu-title">
+								<span>Account</span>
 							</li>
-							<li> 
-								<a href="reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
+							<li>
+								<a href="{{ route('profile.edit') }}"><i class="fe fe-user"></i> <span>Profile</span></a>
 							</li>
-							<li> 
-								<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
-							</li>
-							<li> 
-								<a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
-							</li>
-							<li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="invoice-report.html">Invoice Reports</a></li>
-								</ul>
-							</li>
-							<li class="menu-title"> 
-								<span>Pages</span>
-							</li>
-							<li> 
-								<a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
-							</li>
-							<li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="login.html"> Login </a></li>
-									<li><a href="register.html"> Register </a></li>
-									<li><a href="forgot-password.html"> Forgot Password </a></li>
-									<li><a href="lock-screen.html"> Lock Screen </a></li>
-								</ul>
-							</li>
-							<li class="submenu">
-								<a href="#"><i class="fe fe-warning"></i> <span> Error Pages </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="error-404.html">404 Error </a></li>
-									<li><a href="error-500.html">500 Error </a></li>
-								</ul>
-							</li>
-							<li> 
-								<a href="blank-page.html"><i class="fe fe-file"></i> <span>Blank Page</span></a>
-							</li>
-							<li class="menu-title"> 
-								<span>UI Interface</span>
-							</li>
-							<li> 
-								<a href="components.html"><i class="fe fe-vector"></i> <span>Components</span></a>
-							</li>
-							<li class="submenu">
-								<a href="#"><i class="fe fe-layout"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="form-basic-inputs.html">Basic Inputs </a></li>
-									<li><a href="form-input-groups.html">Input Groups </a></li>
-									<li><a href="form-horizontal.html">Horizontal Form </a></li>
-									<li><a href="form-vertical.html"> Vertical Form </a></li>
-									<li><a href="form-mask.html"> Form Mask </a></li>
-									<li><a href="form-validation.html"> Form Validation </a></li>
-								</ul>
-							</li>
-							<li class="submenu">
-								<a href="#"><i class="fe fe-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="tables-basic.html">Basic Tables </a></li>
-									<li><a href="data-tables.html">Data Table </a></li>
-								</ul>
-							</li>
-							<li class="submenu">
-								<a href="javascript:void(0);"><i class="fe fe-code"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li class="submenu">
-										<a href="javascript:void(0);"> <span>Level 1</span> <span class="menu-arrow"></span></a>
-										<ul style="display: none;">
-											<li><a href="javascript:void(0);"><span>Level 2</span></a></li>
-											<li class="submenu">
-												<a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
-												<ul style="display: none;">
-													<li><a href="javascript:void(0);">Level 3</a></li>
-													<li><a href="javascript:void(0);">Level 3</a></li>
-												</ul>
-											</li>
-											<li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="javascript:void(0);"> <span>Level 1</span></a>
-									</li>
-								</ul>
+							<li>
+								<a href="{{ route('index') }}"><i class="fe fe-globe"></i> <span>Public site</span></a>
 							</li>
 						</ul>
 					</div>
@@ -304,7 +216,23 @@
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
 			<!-- /Page Wrapper -->
 		
         </div>
@@ -328,6 +256,4 @@
 		<script  src={{ asset('admin_end/assets/js/script.js') }} ></script>
 		
     </body>
-
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
 </html>

@@ -3,7 +3,7 @@
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img">
-											<img src={{ asset("front-end/assets/img/patients/patient.jpg") }} alt="User Image">
+											<img src="{{ asset("front-end/assets/img/patients/patient.jpg") }}" alt="User Image">
 										</a>
 										<div class="profile-det-info">
 											<h3>Richard Wilson</h3>
@@ -24,14 +24,14 @@
 												</a>
 											</li>
 											<li>
-												<a href="favourites.html">
+												<a href="{{ route('patient.favourites') }}">
 													<i class="fas fa-bookmark"></i>
 													<span>Favourites</span>
 												</a>
 											</li>
 											
 											<li>
-												<a href="profile-settings.html">
+												<a href="{{ route('doctor.profile.settings.update') }}">
 													<i class="fas fa-user-cog"></i>
 													<span>Profile Settings</span>
 												</a>

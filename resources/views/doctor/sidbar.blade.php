@@ -8,7 +8,7 @@
 											<img src={{ asset('front-end/assets/img/doctors/doctor-thumb-02.jpg') }} alt="User Image">
 										</a>
 										<div class="profile-det-info">
-											<h3>Dr. Darren Elder</h3>
+											<h3>Dr.{{ auth()->user()->doctor->first_name ?? 'Doctor' }}</h3>
 											
 											<div class="patient-details">
 												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>

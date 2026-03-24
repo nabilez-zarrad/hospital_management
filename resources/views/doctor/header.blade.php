@@ -24,7 +24,7 @@
 						<ul class="main-nav">
 							<li>
 								<h1>
-   									Hello mr. {{ auth()->user()->doctor->first_name ?? 'Doctor' }}
+   									
 								</h1>	
 							</li>
 							

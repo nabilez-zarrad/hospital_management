@@ -1,23 +1,47 @@
 <?php
 
+
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AdminAppointmentsController;
+use App\Http\Controllers\AdminDoctorsController;
+use App\Http\Controllers\AdminPatientsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 */
+// Public pages
+Route::get('/', [UserController::class, 'Index'])->name('index');
 
 
-// Admin Dashboard
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
-        ->name('admin.dashboard');
+
+
+
+
+
+// Admin (dashboard + CRUD)
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::resource('doctors', AdminDoctorsController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('patients', AdminPatientsController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('appointments', AdminAppointmentsController::class)->except(['create', 'store']);
 });
+// Extra admin routes
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/add-doctor', [AdminController::class, 'createDoctor'])->name('add.doctor');
+    Route::post('/add-doctor', [AdminController::class, 'storeDoctor'])->name('store.doctor');
+});
+
+
+
+
+
+
 
 // Doctor Dashboard
 Route::middleware('auth')->group(function () {
@@ -25,14 +49,25 @@ Route::middleware('auth')->group(function () {
         ->name('doctor.dashboard');
 });
 
+// Public doctor listing & search
+Route::get('/doctors', [UserController::class, 'doctors'])->name('doctors');
+Route::get('/doctor/{id}', [UserController::class, 'doctorProfile'])->name('doctor.profile');
+Route::get('/search-doctors', [UserController::class, 'searchDoctors'])->name('search.doctors');
+
+
+
+
+
+
+
+
 // Patient Dashboard (اختياري)
 Route::middleware('auth')->group(function () {
     Route::get('/patient/dashboard', [UserController::class, 'patientDashboard'])
         ->name('patient.dashboard');
 });
 
-// Public pages
-Route::get('/', [UserController::class, 'Index'])->name('index');
+
 
 // Authenticated dashboard
 Route::get('/dashboard', [UserController::class, 'Dashboard'])
@@ -61,16 +96,46 @@ Route::middleware('auth')->group(function () {
     Route::post('/appointment/{id}/cancel', [DoctorController::class, 'cancelAppointmentDoctor'])->name('appointment.cancel');
 });
 
-// Admin routes
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/add-doctor', [AdminController::class, 'createDoctor'])->name('add.doctor');
-    Route::post('/add-doctor', [AdminController::class, 'storeDoctor'])->name('store.doctor');
+
+
+
+
+ // Patient NAVBAR
+Route::get('/patient/search', [UserController::class, 'search'])->name('patient.search')->middleware('auth');
+// Route::post('/pation/booking', [UserController::class, 'booking'])->name('patient.booking');
+Route::get('/booking/{id}', [UserController::class, 'booking'])->name('patient.booking');
+
+
+
+
+Route::get('/patient/checkout', [UserController::class, 'checkout'])->name('patient.checkout');
+Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
+
+Route::get('/booking-success', function () {
+    return view('patient.booking-success');})->name('booking.success');
+
+Route::get('/booking-success/{id}', function ($id) {
+    $booking = \App\Models\Booking::findOrFail($id);
+    return view('patient.booking-success', compact('booking'));})->name('booking.success');
+
+
+
+
+Route::get('/patient/favourites', [UserController::class, 'favourites'])->name('patient.favourites');
+Route::post('/patient/favourites/toggle/{doctorId}', [UserController::class, 'toggleFavourite'])->name('patient.favourites.toggle');
+
+
+Route::get('/doctor/profile/{id}', [UserController::class, 'doctorProfile'])->name('doctor.profile');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/doctor/profile-settings', [DoctorController::class, 'profile_settings'])
+        ->name('doctor.profile_settings');
+
+    Route::post('/doctor/profile-settings', [DoctorController::class, 'updateProfileSettings'])
+        ->name('doctor.profile.settings.update');
 });
 
-// Public doctor listing & search
-Route::get('/doctors', [UserController::class, 'doctors'])->name('doctors');
-Route::get('/doctor/{id}', [UserController::class, 'doctorProfile'])->name('doctor.profile');
-Route::get('/search-doctors', [UserController::class, 'searchDoctors'])->name('search.doctors');
 
 require __DIR__ . '/auth.php';
 

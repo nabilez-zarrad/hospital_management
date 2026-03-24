@@ -1,31 +1,30 @@
 <!DOCTYPE html> 
 <html lang="en">
 	
-
+<!-- doccure/booking-success.html  30 Nov 2019 04:12:16 GMT -->
 <head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<meta charset="utf-8">
 		<title>Doccure</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<!-- Favicons -->
-		<link type="image/x-icon" href={{ asset('front-end/assets/img/favicon.png') }} rel="icon">
+		<link href="assets/img/favicon.png" rel="icon">
 		
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href={{ asset('front-end/assets/css/bootstrap.min.css') }}>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-		<link rel="stylesheet" href={{ asset('front-end/assets/plugins/fontawesome/css/fontawesome.min.css') }}>
-		<link rel="stylesheet" href={{ asset('front-end/assets/plugins/fontawesome/css/all.min.css') }}>
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 		
 		<!-- Main CSS -->
-		<link rel="stylesheet" href={{ asset('front-end/assets/css/style.css') }}>
+		<link rel="stylesheet" href="assets/css/style.css">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		{{-- [if lt IE 9]>
-			<script src="front-end/assets/js/html5shiv.min.js"></script>
-			<script src="front-end/assets/js/respond.min.js"></script>
-		<![endif] --}}
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
 	
 	</head>
 	<body>
@@ -45,58 +44,80 @@
 							</span>
 						</a>
 						<a href="index-2.html" class="navbar-brand logo">
-							<img src="front-end/assets/img/logo.png" class="img-fluid" alt="Logo">
+							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index-2.html" class="menu-logo">
-								<img src="front-end/assets/img/logo.png" class="img-fluid" alt="Logo">
+								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
 							</a>
 						</div>
 						<ul class="main-nav">
-							<li class="active">
+							<li>
 								<a href="index-2.html">Home</a>
 							</li>
 							<li class="has-submenu">
 								<a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
-                                   
+								<ul class="submenu">
+									<li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
+									<li><a href="appointments.html">Appointments</a></li>
+									<li><a href="schedule-timings.html">Schedule Timing</a></li>
+									<li><a href="my-patients.html">Patients List</a></li>
+									<li><a href="patient-profile.html">Patients Profile</a></li>
+									<li><a href="chat-doctor.html">Chat</a></li>
+									<li><a href="invoices.html">Invoices</a></li>
+									<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
+									<li><a href="reviews.html">Reviews</a></li>
+									<li><a href="doctor-register.html">Doctor Register</a></li>
+								</ul>
 							</li>	
-							<li class="has-submenu">
+							<li class="has-submenu active">
 								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-                                
+								<ul class="submenu">
+									<li><a href="search.html">Search Doctor</a></li>
+									<li><a href="doctor-profile.html">Doctor Profile</a></li>
+									<li><a href="booking.html">Booking</a></li>
+									<li><a href="checkout.html">Checkout</a></li>
+									<li class="active"><a href="booking-success.html">Booking Success</a></li>
+									<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+									<li><a href="favourites.html">Favourites</a></li>
+									<li><a href="chat.html">Chat</a></li>
+									<li><a href="profile-settings.html">Profile Settings</a></li>
+									<li><a href="change-password.html">Change Password</a></li>
+								</ul>
 							</li>	
 							<li class="has-submenu">
 								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="voice-call.html">Voice Call</a></li>
-                                        <li><a href="video-call.html">Video Call</a></li>
-                                        <li><a href="search.html">Search Doctors</a></li>
-                                        <li><a href="calendar.html">Calendar</a></li>
-                                        <li><a href="components.html">Components</a></li>
-                                        <li class="has-submenu">
-                                            <a href="invoices.html">Invoices</a>
-                                            <ul class="submenu">
-                                                <li><a href="invoices.html">Invoices</a></li>
-                                                <li><a href="invoice-view.html">Invoice View</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blank-page.html">Starter Page</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                                    </ul>
+								<ul class="submenu">
+									<li><a href="voice-call.html">Voice Call</a></li>
+									<li><a href="video-call.html">Video Call</a></li>
+									<li><a href="search.html">Search Doctors</a></li>
+									<li><a href="calendar.html">Calendar</a></li>
+									<li><a href="components.html">Components</a></li>
+									<li class="has-submenu">
+										<a href="invoices.html">Invoices</a>
+										<ul class="submenu">
+											<li><a href="invoices.html">Invoices</a></li>
+											<li><a href="invoice-view.html">Invoice View</a></li>
+										</ul>
+									</li>
+									<li><a href="blank-page.html">Starter Page</a></li>
+									<li><a href="login.html">Login</a></li>
+									<li><a href="register.html">Register</a></li>
+									<li><a href="forgot-password.html">Forgot Password</a></li>
+								</ul>
 							</li>
 							<li>
 								<a href="admin/index.html" target="_blank">Admin</a>
 							</li>
 							<li class="login-link">
-								<a href="#">Login / Signup</a>
+								<a href="login.html">Login / Signup</a>
 							</li>
-						</ul>		 
+						</ul>	 
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
@@ -108,61 +129,64 @@
 								<p class="contact-info-header"> +1 315 369 5943</p>
 							</div>
 						</li>
-                        @if(!Auth::check())
-                            <li class="nav-item">
-                                <a class="nav-link header-login" href={{ route('login') }}>login </a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-
-                                        <x-dropdown-link :href="route('logout')"
-                                                onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </x-dropdown-link>
-                                </form>
-                            </li>
-                        @endif
-                        
-                        
-
+						<li class="nav-item">
+							<a class="nav-link header-login" href="login.html">login / Signup </a>
+						</li>
 					</ul>
 				</nav>
 			</header>
 			<!-- /Header -->
 			
-
-
-			<!-- Home Banner -->
-            @include('home_banner')
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Booking</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">Booking</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
 			
-			<!-- /Home Banner -->
-			  
-
-
-			<!-- Clinic and Specialities -->
-			@include('Clinic_and_Specialities', ['doctors' => $doctors ?? []])
-			<!-- Clinic and Specialities -->
-		  
-
-
-			<!-- Popular Section -->
-            @include('Popular_Section')
-            <!-- /Popular Section -->
-		   
-
-
-		   <!-- Availabe Features الميزات المتاحة  -->
-		   		@include('Availabe_Features')
-			<!-- Availabe Features -->
-			
-
-
-
-
-
+			<!-- Page Content -->
+			<div class="content success-page-cont">
+				<div class="container-fluid">
+				
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+						
+							<!-- Success Card -->
+							<div class="card success-card">
+								<div class="card-body">
+									<div class="success-cont">
+										<i class="fas fa-check"></i>
+										<h3>Appointment booked Successfully!</h3>
+										<p>
+                                            Appointment booked with
+                                            <strong>Dr. {{ $booking->doctor->name ?? 'Doctor' }}</strong><br>
+                                            on
+                                            <strong>{{ $booking->booking_date }} {{ $booking->booking_time }}</strong>
+                                        </p>
+										<a href="invoice-view.html" class="btn btn-primary view-inv-btn">View Invoice</a>
+									</div>
+								</div>
+							</div>
+							<!-- /Success Card -->
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>		
+			<!-- /Page Content -->
+   
 			<!-- Footer -->
 			<footer class="footer">
 				
@@ -175,7 +199,7 @@
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-about">
 									<div class="footer-logo">
-										<img src="front-end/assets/img/footer-logo.png" alt="logo">
+										<img src="assets/img/footer-logo.png" alt="logo">
 									</div>
 									<div class="footer-about-content">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -302,23 +326,20 @@
 			</footer>
 			<!-- /Footer -->
 		   
-	   </div>
-	   <!-- /Main Wrapper -->
+		</div>
+		<!-- /Main Wrapper -->
 	  
 		<!-- jQuery -->
-		<script src="front-end/assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 		
 		<!-- Bootstrap Core JS -->
-		<script src="front-end/assets/js/popper.min.js"></script>
-		<script src="front-end/assets/js/bootstrap.min.js"></script>
-		
-		<!-- Slick JS -->
-		<script src="front-end/assets/js/slick.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
 		
 		<!-- Custom JS -->
-		<script src="front-end/assets/js/script.js"></script>
+		<script src="assets/js/script.js"></script>
 		
 	</body>
 
-<!-- doccure/  30 Nov 2019 04:11:53 GMT -->
+<!-- doccure/booking-success.html  30 Nov 2019 04:12:16 GMT -->
 </html>

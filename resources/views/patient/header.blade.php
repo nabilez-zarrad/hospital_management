@@ -24,15 +24,12 @@
 						<ul class="main-nav">
 							
 								<li class="active"><a href={{ route('patient.dashboard') }}>Home</a></li>
-								<li><a href="search.html">Search Doctor</a></li>
-								<li><a href="doctor-profile.html">Doctor Profile</a></li>
-								<li><a href="booking.html">Booking</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-								<li><a href="booking-success.html">Booking Success</a></li>
+								<li><a href={{ route("patient.search") }}>Search Doctor</a></li>
 								
 								
 								
-									
+								
+								
 
 
 
